@@ -119,19 +119,7 @@ Lệnh này sẽ:
 - Tải template MoMorph project mới nhất
 - Sinh các file cấu hình (`.claude/`, prompt files, workflow scripts...)
 - Thiết lập kết nối MCP server cho AI agent đã chọn
-
-### Bước 8: (Tùy chọn) Cài đặt MoMorph VSCode Extension
-
-Nếu sử dụng VSCode + GitHub Copilot, cài thêm MoMorph Extension:
-
-```sh
-# Cài đặt qua script (không khả dụng với macOS):
-curl -sSfL https://morpheus-vscode.sun-asterisk.ai/install.sh | CHANNEL=stable bash -
-```
-
-Hoặc cài đặt bằng file `.vsix` nhận từ đội phát triển (xem mục "Bản đóng gói extension" trong tài liệu hướng dẫn).
-
-Sau khi cài đặt, mở source code repo → click vào biểu tượng MoMorph trên sidebar → bạn sẽ thấy danh sách frame list của Figma file đã liên kết.
+- Tự động cài đặt MoMorph VSCode Extension (nếu chưa cài). Sau khi cài đặt, mở source code repo trên VSCode → chạy command "MoMorph: Sign In" → click vào biểu tượng MoMorph trên sidebar → bạn sẽ thấy danh sách frame list của Figma file đã liên kết.
 
 ### Bước 9: Bắt đầu generate code
 
@@ -139,17 +127,30 @@ Sử dụng Figma project để thực hành:
 
 **Figma file:** [SAA 2025 - Internal Live Coding](https://www.figma.com/design/9ypp4enmFmdK3YAFJLIu6C/SAA-2025---Internal-Live-Coding)
 
-Quy trình đầy đủ generate code với MoMorph (sử dụng slash commands trong AI agent):
+#### Chuẩn bị context: Viết Screen Spec trên MoMorph Web
+
+Trước khi bắt đầu generate code, bạn cần chuẩn bị screen spec trên MoMorph Web thông qua MoMorph Figma Plugin (yêu cầu Figma Account - Full Seat). Từ MoMorph Figma Plugin, đánh số cho các frame Figma cần nhập specs, submit các items này lên MoMorph Web và bắt đầu viết screen spec mô tả chi tiết chức năng, behavior, business logic của màn hình đó thủ công hoặc sử dụng tính năng sinh specs tự động của MoMorph. Screen spec trên server chính là nguồn thông tin gốc (source of truth) cho toàn bộ quy trình generate code phía sau.
+
+> **Lưu ý cho bài thực hành này:** Screen spec của các màn hình đã được chuẩn bị sẵn trên MoMorph server rồi, nên các bạn **không cần viết spec** mà có thể **bắt tay vào quy trình generate code ngay từ bước `/momorph.constitution`**. Vui lòng tham khảo thêm tài liệu [MoMorph Figma Plugin](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F07S87PSVUN) nếu muốn tìm hiểu chi tiết hơn về khâu viết Screen Spec.
+
+#### Quy trình generate code với MoMorph
+
+Sau khi đã có screen spec trên MoMorph server, sử dụng các slash commands trong AI agent để generate code:
 
 1. **`/momorph.constitution`** — Khởi tạo coding standards và conventions cho project
-2. **`/momorph.specify`** — Sinh specification từ Figma frame (spec.md + design-style.md)
+2. **`/momorph.specify`** — Kéo screen spec từ MoMorph server về local và sinh ra các file spec cục bộ (`spec.md`, `design-style.md`)
 3. **`/momorph.reviewspecify`** — Review và refine spec output (nên chạy 2–3 lần để kết quả tốt hơn)
 4. **`/momorph.plan`** — Tạo implementation plan chi tiết
 5. **`/momorph.reviewplan`** — Review và refine plan output (nên chạy 2–3 lần để kết quả tốt hơn)
 6. **`/momorph.tasks`** — Chia nhỏ plan thành danh sách task thực thi
 7. **`/momorph.implement`** — Thực thi tasks, sinh code theo design
 
-> **Lưu ý cho bài thực hành này:** Specs của các màn hình đã được chuẩn bị sẵn trên MoMorph server. Do vậy trong buổi thực hành, các bạn có thể **bắt đầu ngay vào quá trình gen code bắt đầu từ /momorph.constitution cho đến /momorph.implement**.
+> **Tại sao đã có spec trên MoMorph rồi mà vẫn cần chạy `/momorph.specify`?**
+>
+> - **Screen spec trên MoMorph server** là bản mô tả chức năng, behavior, business logic do con người viết và lưu trên nền tảng MoMorph Web. Nó đóng vai trò nguồn thông tin gốc (source of truth).
+> - **`/momorph.specify`** sẽ đọc screen spec đó từ server, kết hợp với thông tin design từ Figma (layout, style, component structure...), rồi tổng hợp lại thành các file spec cục bộ (`spec.md`, `design-style.md`) ngay trong repo. Các file này chính là context trực tiếp mà AI agent sử dụng trong các bước tiếp theo (plan, tasks, implement).
+>
+> Nói cách khác: screen spec trên server = **input do người dùng viết**, còn output của `/momorph.specify` = **context đã được xử lý và làm giàu** để AI agent có thể hiểu và sinh code chính xác.
 
 #### Ví dụ prompt cho từng command
 
@@ -231,3 +232,4 @@ make down
 - [MoMorph MCP Server](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F0A9HULD5D0)
 - [MoMorph VSCode Extension](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F094K2LTV71)
 - [MoMorph Web](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F092SAQBXR8)
+- [MoMorph Figma Plugin](https://sun-asterisk.enterprise.slack.com/docs/T02CQGZA7MK/F07S87PSVUN)
