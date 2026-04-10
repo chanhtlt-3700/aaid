@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { createClient } from "@/libs/supabase/client";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function GoogleLoginButton() {
+	const { t } = useLanguage();
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const errorTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
@@ -30,7 +32,7 @@ export function GoogleLoginButton() {
 		});
 
 		if (oauthError) {
-			setError("Login service is temporarily unavailable. Please try again later.");
+			setError(t.login.error);
 			setIsLoading(false);
 			errorTimerRef.current = setTimeout(() => setError(null), 5000);
 		}
@@ -42,10 +44,10 @@ export function GoogleLoginButton() {
 				type="button"
 				onClick={handleLogin}
 				disabled={isLoading}
-				aria-label="Login with Google"
+				aria-label={t.login.buttonAriaLabel}
 				className="flex h-15 min-w-[297px] items-center justify-center gap-2 rounded-lg bg-btn-login-bg px-6 py-4 font-montserrat text-base font-normal text-btn-login-text transition-colors hover:bg-[#fff8e1] focus:outline-2 focus:outline-offset-2 focus:outline-btn-login-bg disabled:cursor-not-allowed disabled:opacity-50"
 			>
-				<span>ĐĂNG NHẬP với Google</span>
+				<span>{t.login.button}</span>
 				{isLoading ? (
 					<svg className="h-6 w-6 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 						<circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="opacity-25" />

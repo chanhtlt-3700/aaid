@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { GoogleLoginButton } from "@/components/login/GoogleLoginButton";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function HeroSection() {
+	const { t } = useLanguage();
+
 	return (
 		<div className="mx-auto flex w-full max-w-[1224px] flex-col gap-10 px-3 sm:px-6 md:px-8 xl:px-0 2xl:gap-30">
 			{/* ROOT FURTHER logo */}
@@ -19,9 +24,9 @@ export function HeroSection() {
 			{/* Text + Button */}
 			<div className="flex flex-col gap-6">
 				<p className="font-montserrat text-base font-normal leading-8 tracking-[0.5px] text-white sm:max-w-[480px] sm:text-xl sm:leading-10">
-					Bắt đầu hành trình của bạn cùng SAA 2025.
+					{t.hero.tagline}
 					<br />
-					Đăng nhập để khám phá!
+					{t.hero.cta}
 				</p>
 
 				<GoogleLoginButton />

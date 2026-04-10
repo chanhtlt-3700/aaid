@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LanguageSelector } from "@/components/shared/LanguageSelector";
 
 export function Header() {
 	return (
@@ -11,26 +12,7 @@ export function Header() {
 					height={48}
 					className="h-9 w-10 md:h-11 md:w-12 lg:h-12 lg:w-[52px]"
 				/>
-				<button
-					type="button"
-					aria-label="Select language"
-					className="flex items-center gap-0.5 rounded px-4 py-4 transition-colors duration-150 hover:cursor-pointer hover:bg-white/10"
-				>
-					<span className="flex h-6 w-6 items-center justify-center">
-						<Image
-							src="/assets/login/icons/vn-flag.svg"
-							alt="Vietnam flag"
-							width={20}
-							height={15}
-						/>
-					</span>
-					<span className="hidden font-montserrat text-base font-bold leading-6 tracking-[0.15px] text-white min-[480px]:inline">
-						VN
-					</span>
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<path d="M7 10l5 5 5-5" stroke="white" strokeWidth="2" />
-					</svg>
-				</button>
+				<LanguageSelector />
 			</div>
 		</header>
 	);

@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { GoogleLoginButton } from "@/components/login/GoogleLoginButton";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const mockSignInWithOAuth = vi.fn();
 
@@ -12,6 +13,14 @@ vi.mock("@/libs/supabase/client", () => ({
 	}),
 }));
 
+function renderButton() {
+	return render(
+		<LanguageProvider>
+			<GoogleLoginButton />
+		</LanguageProvider>,
+	);
+}
+
 describe("GoogleLoginButton", () => {
 	beforeEach(() => {
 		vi.clearAllMocks();
@@ -19,16 +28,16 @@ describe("GoogleLoginButton", () => {
 	});
 
 	it("renders button with correct text and Google icon", () => {
-		render(<GoogleLoginButton />);
-		const button = screen.getByRole("button", { name: /login with google/i });
+		renderButton();
+		const button = screen.getByRole("button", { name: /google/i });
 		expect(button).toBeInTheDocument();
 		expect(button).toHaveTextContent("ĐĂNG NHẬP với Google");
 		expect(button.querySelector("img")).toBeInTheDocument();
 	});
 
 	it("calls signInWithOAuth with provider google and correct redirectTo on click", async () => {
-		render(<GoogleLoginButton />);
-		const button = screen.getByRole("button", { name: /login with google/i });
+		renderButton();
+		const button = screen.getByRole("button", { name: /google/i });
 
 		fireEvent.click(button);
 
@@ -47,8 +56,8 @@ describe("GoogleLoginButton", () => {
 			() => new Promise(() => {}),
 		);
 
-		render(<GoogleLoginButton />);
-		const button = screen.getByRole("button", { name: /login with google/i });
+		renderButton();
+		const button = screen.getByRole("button", { name: /google/i });
 
 		fireEvent.click(button);
 
@@ -63,12 +72,12 @@ describe("GoogleLoginButton", () => {
 			error: { message: "OAuth error" },
 		});
 
-		render(<GoogleLoginButton />);
-		fireEvent.click(screen.getByRole("button", { name: /login with google/i }));
+		renderButton();
+		fireEvent.click(screen.getByRole("button", { name: /google/i }));
 
 		await waitFor(() => {
 			expect(screen.getByRole("alert")).toHaveTextContent(
-				"Login service is temporarily unavailable",
+				"Dịch vụ đăng nhập tạm thời không khả dụng",
 			);
 		});
 	});
@@ -78,8 +87,8 @@ describe("GoogleLoginButton", () => {
 			() => new Promise(() => {}),
 		);
 
-		render(<GoogleLoginButton />);
-		const button = screen.getByRole("button", { name: /login with google/i });
+		renderButton();
+		const button = screen.getByRole("button", { name: /google/i });
 
 		fireEvent.click(button);
 		fireEvent.click(button);

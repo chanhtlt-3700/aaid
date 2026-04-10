@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const mockGetUser = vi.fn();
 const mockRedirect = vi.fn();
@@ -38,7 +39,7 @@ describe("Login Page", () => {
 
 		const { default: LoginPage } = await import("@/app/page");
 		const jsx = await LoginPage();
-		render(jsx);
+		render(<LanguageProvider>{jsx}</LanguageProvider>);
 
 		expect(screen.getByAltText("SAA 2025")).toBeInTheDocument();
 		expect(screen.getByAltText("ROOT FURTHER")).toBeInTheDocument();

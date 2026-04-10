@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Montserrat_Alternates } from "next/font/google";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -30,7 +31,9 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 			</head>
 			<body className={`${montserrat.variable} ${montserratAlt.variable} antialiased`}>
-				{children}
+				<LanguageProvider>
+					{children}
+				</LanguageProvider>
 			</body>
 		</html>
 	);
