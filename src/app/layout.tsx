@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Montserrat_Alternates, Share_Tech_Mono } from "next/font/google";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { PageTransition } from "@/components/shared/PageTransition";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -38,7 +39,7 @@ export default function RootLayout({
 			</head>
 			<body className={`${montserrat.variable} ${montserratAlt.variable} ${shareTechMono.variable} antialiased`}>
 				<LanguageProvider>
-					{children}
+					<PageTransition>{children}</PageTransition>
 				</LanguageProvider>
 			</body>
 		</html>
