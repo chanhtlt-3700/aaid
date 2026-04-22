@@ -6,7 +6,7 @@ import { KeyvisualBanner } from "@/components/awards/KeyvisualBanner";
 import { AwardsPageTitle } from "@/components/awards/AwardsPageTitle";
 import { AwardsContent } from "@/components/awards/AwardsContent";
 import { KudosSection } from "@/components/homepage/KudosSection";
-import { WidgetButton } from "@/components/homepage/WidgetButton";
+import { FloatingActionButton } from "@/components/shared/FloatingActionButton";
 
 export default async function AwardsInformationPage() {
 	const supabase = await createClient();
@@ -32,7 +32,7 @@ export default async function AwardsInformationPage() {
 				</div>
 			</main>
 			<Footer variant="full" />
-			<WidgetButton />
+			<FloatingActionButton />
 		</div>
 	);
 }

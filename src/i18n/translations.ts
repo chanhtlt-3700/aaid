@@ -55,6 +55,23 @@ interface Translations {
 		eventLabel: string;
 		openCta: string;
 	};
+	fab: {
+		openMenu: string;
+		closeMenu: string;
+		rules: string;
+		writeKudo: string;
+		cancel: string;
+	};
+	kudosRulesModal: {
+		title: string;
+		intro: string;
+		rewardsTitle: string;
+		rewards: string[];
+		badgesTitle: string;
+		badges: { icon: string; name: string }[];
+		close: string;
+		writeKudoCta: string;
+	};
 	writeKudoModal: {
 		title: string;
 		close: string;
@@ -228,6 +245,35 @@ export const translations: Record<LanguageCode, Translations> = {
 				signatureCreator: "Giải thưởng Signature vinh danh cá nhân hoặc tập thể thể hiện tinh thần đặc trưng mà Sun* hướng tới trong từng thời kỳ. Trong năm 2025, giải thưởng Signature vinh danh Creator - cá nhân/tập thể mang tư duy chủ động và nhạy bén, luôn nhìn thấy cơ hội trong thách thức và tiên phong trong hành động.",
 				mvp: "Giải thưởng MVP vinh danh cá nhân xuất sắc nhất năm – gương mặt tiêu biểu đại diện cho toàn bộ tập thể Sun*. Họ là người đã thể hiện năng lực vượt trội, tinh thần cống hiến bền bỉ, và tầm ảnh hưởng sâu rộng, để lại dấu ấn mạnh mẽ trong hành trình của Sun* suốt năm qua.",
 			},
+		},
+		fab: {
+			openMenu: "Mở menu nhanh",
+			closeMenu: "Đóng menu nhanh",
+			rules: "Thể lệ",
+			writeKudo: "Viết KUDOS",
+			cancel: "Hủy",
+		},
+		kudosRulesModal: {
+			title: "Thể lệ Sun* Kudos 2025",
+			intro: "Sun* Kudos là phong trào ghi nhận lời cảm ơn dành cho tất cả Sunner trong khuôn khổ SAA 2025. Hãy dành tặng những lời cảm ơn chân thành tới đồng đội đã đồng hành cùng bạn suốt năm qua.",
+			rewardsTitle: "Phần thưởng",
+			rewards: [
+				"Mỗi Sunner có thể gửi và nhận không giới hạn số lượng Kudos.",
+				"Kudos được highlight trên Live Board khi nhận đủ số lượt tim quy định.",
+				"Sunner tích cực nhất mỗi tuần sẽ được tặng Secret Box ngẫu nhiên.",
+				"TOP 3 Sunner nhận được nhiều Kudos nhất trong kỳ sẽ nhận quà đặc biệt tại lễ trao giải 26/12/2025.",
+			],
+			badgesTitle: "Danh hiệu",
+			badges: [
+				{ icon: "🌱", name: "New Hero" },
+				{ icon: "🌿", name: "Rising Hero" },
+				{ icon: "🌳", name: "Super Hero" },
+				{ icon: "🌟", name: "Legend Hero" },
+				{ icon: "💎", name: "Signature Creator" },
+				{ icon: "🔥", name: "MVP" },
+			],
+			close: "Đóng",
+			writeKudoCta: "Viết KUDOS",
 		},
 		writeKudoModal: {
 			title: "Gửi lời cám ơn và ghi nhận đến đồng đội",
@@ -404,6 +450,35 @@ export const translations: Record<LanguageCode, Translations> = {
 				signatureCreator: "The Signature award honors individuals or teams who embody the spirit Sun* prioritizes in each period. In 2025, the Signature — Creator award honors proactive, perceptive people who find opportunity in challenge and take pioneering action.",
 				mvp: "The MVP award honors the most outstanding individual of the year — a defining face of Sun*. They demonstrate superior capability, unwavering dedication, and deep influence, leaving a strong imprint on Sun*'s journey throughout the year.",
 			},
+		},
+		fab: {
+			openMenu: "Open quick menu",
+			closeMenu: "Close quick menu",
+			rules: "Rules",
+			writeKudo: "Write KUDOS",
+			cancel: "Cancel",
+		},
+		kudosRulesModal: {
+			title: "Sun* Kudos 2025 Rules",
+			intro: "Sun* Kudos is a recognition movement for all Sunners as part of SAA 2025. Share heartfelt thank-you messages with teammates who walked with you this year.",
+			rewardsTitle: "Rewards",
+			rewards: [
+				"Every Sunner can send and receive unlimited kudos.",
+				"Kudos are highlighted on the Live Board once they reach the heart threshold.",
+				"The most active Sunner each week receives a random Secret Box.",
+				"The TOP 3 Sunners with the most kudos in a period receive special gifts at the award ceremony on December 26, 2025.",
+			],
+			badgesTitle: "Badges",
+			badges: [
+				{ icon: "🌱", name: "New Hero" },
+				{ icon: "🌿", name: "Rising Hero" },
+				{ icon: "🌳", name: "Super Hero" },
+				{ icon: "🌟", name: "Legend Hero" },
+				{ icon: "💎", name: "Signature Creator" },
+				{ icon: "🔥", name: "MVP" },
+			],
+			close: "Close",
+			writeKudoCta: "Write KUDOS",
 		},
 		writeKudoModal: {
 			title: "Send kudos to your teammates",

@@ -6,7 +6,7 @@ import { HeroSection } from "@/components/homepage/HeroSection";
 import { RootFurtherSection } from "@/components/homepage/RootFurtherSection";
 import { AwardsSection } from "@/components/homepage/AwardsSection";
 import { KudosSection } from "@/components/homepage/KudosSection";
-import { WidgetButton } from "@/components/homepage/WidgetButton";
+import { FloatingActionButton } from "@/components/shared/FloatingActionButton";
 
 export default async function DashboardPage() {
 	const supabase = await createClient();
@@ -28,7 +28,7 @@ export default async function DashboardPage() {
 				</div>
 			</main>
 			<Footer variant="full" />
-			<WidgetButton />
+			<FloatingActionButton />
 		</div>
 	);
 }

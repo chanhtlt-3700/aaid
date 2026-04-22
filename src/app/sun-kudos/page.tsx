@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/libs/supabase/server";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
-import { WidgetButton } from "@/components/homepage/WidgetButton";
+import { FloatingActionButton } from "@/components/shared/FloatingActionButton";
 import { KudosKeyvisual } from "@/components/kudos/KudosKeyvisual";
 import { KudosWriteBar } from "@/components/kudos/KudosWriteBar";
 import { HighlightKudos } from "@/components/kudos/HighlightKudos";
@@ -45,7 +45,7 @@ export default async function SunKudosPage() {
 				</div>
 			</main>
 			<Footer variant="full" />
-			<WidgetButton />
+			<FloatingActionButton />
 		</div>
 	);
 }
