@@ -7,6 +7,10 @@
 	--color-btn-login-text: #00101A;
 	--color-text-primary: #FFFFFF;
 	--color-divider: #2E3940;
+	--color-gold-primary: #FFEA9E;
+	--color-gold-border: #998C5F;
+	--color-gold-tint: rgba(255, 234, 158, 0.1);
+	--shadow-gold-glow: 0 4px 4px 0 rgba(0,0,0,0.25), 0 0 6px 0 #FAE287;
 }
 
 @theme inline {
@@ -16,8 +20,13 @@
 	--color-btn-login-text: var(--color-btn-login-text);
 	--color-text-primary: var(--color-text-primary);
 	--color-divider: var(--color-divider);
+	--color-gold-primary: var(--color-gold-primary);
+	--color-gold-border: var(--color-gold-border);
+	--color-gold-tint: var(--color-gold-tint);
+	--shadow-gold-glow: var(--shadow-gold-glow);
 	--font-montserrat: var(--font-montserrat);
 	--font-montserrat-alt: var(--font-montserrat-alt);
+	--font-share-tech-mono: var(--font-share-tech-mono);
 }
 
 body {

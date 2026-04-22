@@ -10,10 +10,14 @@ vi.mock("next/image", () => ({
 	},
 }));
 
-function renderHeader() {
+vi.mock("next/navigation", () => ({
+	usePathname: () => "/dashboard",
+}));
+
+function renderHeader(variant?: "minimal" | "full") {
 	return render(
 		<LanguageProvider>
-			<Header />
+			<Header variant={variant} />
 		</LanguageProvider>,
 	);
 }
@@ -35,5 +39,27 @@ describe("Header", () => {
 	it("uses semantic header element", () => {
 		renderHeader();
 		expect(document.querySelector("header")).toBeInTheDocument();
+	});
+
+	it("does not render nav links in minimal variant", () => {
+		renderHeader("minimal");
+		expect(screen.queryByText("About SAA 2025")).not.toBeInTheDocument();
+	});
+
+	it("renders nav links in full variant", () => {
+		renderHeader("full");
+		expect(screen.getByText("About SAA 2025")).toBeInTheDocument();
+		expect(screen.getByText("Awards Information")).toBeInTheDocument();
+		expect(screen.getByText("Sun* Kudos")).toBeInTheDocument();
+	});
+
+	it("renders notification bell in full variant", () => {
+		renderHeader("full");
+		expect(screen.getByRole("button", { name: /thông báo/i })).toBeInTheDocument();
+	});
+
+	it("renders profile button in full variant", () => {
+		renderHeader("full");
+		expect(screen.getByRole("button", { name: /profile/i })).toBeInTheDocument();
 	});
 });

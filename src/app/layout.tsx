@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Montserrat_Alternates } from "next/font/google";
+import { Montserrat, Montserrat_Alternates, Share_Tech_Mono } from "next/font/google";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
@@ -13,6 +13,12 @@ const montserratAlt = Montserrat_Alternates({
 	weight: "700",
 	subsets: ["latin", "vietnamese"],
 	variable: "--font-montserrat-alt",
+});
+
+const shareTechMono = Share_Tech_Mono({
+	weight: "400",
+	subsets: ["latin"],
+	variable: "--font-share-tech-mono",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +36,7 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 			</head>
-			<body className={`${montserrat.variable} ${montserratAlt.variable} antialiased`}>
+			<body className={`${montserrat.variable} ${montserratAlt.variable} ${shareTechMono.variable} antialiased`}>
 				<LanguageProvider>
 					{children}
 				</LanguageProvider>
