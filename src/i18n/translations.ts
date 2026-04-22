@@ -49,6 +49,12 @@ interface Translations {
 			mvp: string;
 		};
 	};
+	countdownPage: {
+		title: string;
+		subtitle: string;
+		eventLabel: string;
+		openCta: string;
+	};
 	kudosPage: {
 		bannerTitle: string;
 		bannerSubtitle: string;
@@ -203,6 +209,12 @@ export const translations: Record<LanguageCode, Translations> = {
 				mvp: "Giải thưởng MVP vinh danh cá nhân xuất sắc nhất năm – gương mặt tiêu biểu đại diện cho toàn bộ tập thể Sun*. Họ là người đã thể hiện năng lực vượt trội, tinh thần cống hiến bền bỉ, và tầm ảnh hưởng sâu rộng, để lại dấu ấn mạnh mẽ trong hành trình của Sun* suốt năm qua.",
 			},
 		},
+		countdownPage: {
+			title: "Sắp diễn ra",
+			subtitle: "SAA 2025 sẽ mở đăng ký trong",
+			eventLabel: "26/12/2025 · Âu Cơ Art Center",
+			openCta: "Vào SAA 2025",
+		},
 		kudosPage: {
 			bannerTitle: "Hệ thống ghi nhận lời cảm ơn",
 			bannerSubtitle: "SAA 2025 KUDOS",
@@ -352,6 +364,12 @@ export const translations: Record<LanguageCode, Translations> = {
 				signatureCreator: "The Signature award honors individuals or teams who embody the spirit Sun* prioritizes in each period. In 2025, the Signature — Creator award honors proactive, perceptive people who find opportunity in challenge and take pioneering action.",
 				mvp: "The MVP award honors the most outstanding individual of the year — a defining face of Sun*. They demonstrate superior capability, unwavering dedication, and deep influence, leaving a strong imprint on Sun*'s journey throughout the year.",
 			},
+		},
+		countdownPage: {
+			title: "Coming soon",
+			subtitle: "SAA 2025 opens in",
+			eventLabel: "Dec 26, 2025 · Au Co Art Center",
+			openCta: "Enter SAA 2025",
 		},
 		kudosPage: {
 			bannerTitle: "Kudos Recognition System",

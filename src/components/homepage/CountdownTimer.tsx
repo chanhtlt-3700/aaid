@@ -8,15 +8,16 @@ const DEFAULT_EVENT_DATE = "2025-12-26T00:00:00+07:00";
 
 interface CountdownTimerProps {
 	onExpired?: (expired: boolean) => void;
+	targetIso?: string;
 }
 
-function getTargetDate(): Date {
-	const envDate = process.env.NEXT_PUBLIC_EVENT_DATE;
-	if (envDate) {
-		const parsed = new Date(envDate);
+function getTargetDate(override?: string): Date {
+	const source = override ?? process.env.NEXT_PUBLIC_EVENT_DATE;
+	if (source) {
+		const parsed = new Date(source);
 		if (!isNaN(parsed.getTime())) return parsed;
 		if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-			console.warn(`Invalid NEXT_PUBLIC_EVENT_DATE: "${envDate}". Falling back to default.`);
+			console.warn(`Invalid countdown target "${source}". Falling back to default.`);
 		}
 	}
 	return new Date(DEFAULT_EVENT_DATE);
@@ -40,9 +41,9 @@ function pad(n: number): string {
 	return n.toString().padStart(2, "0");
 }
 
-export function CountdownTimer({ onExpired }: CountdownTimerProps) {
+export function CountdownTimer({ onExpired, targetIso }: CountdownTimerProps) {
 	const { t } = useLanguage();
-	const [targetDate] = useState(getTargetDate);
+	const [targetDate] = useState(() => getTargetDate(targetIso));
 	const [remaining, setRemaining] = useState(() => calculateRemaining(targetDate));
 
 	const updateCountdown = useCallback(() => {
