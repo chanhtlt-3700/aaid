@@ -2,14 +2,35 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { createClient } from "@/libs/supabase/client";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+type UrlErrorCode =
+	| "unauthorized"
+	| "session_expired"
+	| "auth_failed"
+	| "missing_code";
+
 export function GoogleLoginButton() {
 	const { t } = useLanguage();
+	const searchParams = useSearchParams();
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const errorTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+	const urlError = (searchParams?.get("error") ?? null) as UrlErrorCode | null;
+
+	const urlErrorMessage =
+		urlError === "unauthorized"
+			? t.login.errorUnauthorized
+			: urlError === "session_expired"
+				? t.login.errorSessionExpired
+				: urlError === "auth_failed"
+					? t.login.errorAuthFailed
+					: urlError === "missing_code"
+						? t.login.errorMissingCode
+						: null;
 
 	useEffect(() => {
 		return () => {
@@ -38,6 +59,8 @@ export function GoogleLoginButton() {
 		}
 	};
 
+	const displayedError = error ?? urlErrorMessage;
+
 	return (
 		<div>
 			<button
@@ -62,9 +85,9 @@ export function GoogleLoginButton() {
 					/>
 				)}
 			</button>
-			{error && (
+			{displayedError && (
 				<p className="mt-2 text-sm text-red-400" role="alert">
-					{error}
+					{displayedError}
 				</p>
 			)}
 		</div>

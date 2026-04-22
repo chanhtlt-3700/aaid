@@ -9,6 +9,10 @@ interface Translations {
 		button: string;
 		buttonAriaLabel: string;
 		error: string;
+		errorUnauthorized: string;
+		errorSessionExpired: string;
+		errorAuthFailed: string;
+		errorMissingCode: string;
 	};
 	footer: {
 		copyright: string;
@@ -101,6 +105,10 @@ export const translations: Record<LanguageCode, Translations> = {
 			button: "ĐĂNG NHẬP với Google",
 			buttonAriaLabel: "Đăng nhập với Google",
 			error: "Dịch vụ đăng nhập tạm thời không khả dụng. Vui lòng thử lại sau.",
+			errorUnauthorized: "Email không được phép đăng nhập. Vui lòng dùng email Sun*.",
+			errorSessionExpired: "Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.",
+			errorAuthFailed: "Đăng nhập thất bại. Vui lòng thử lại.",
+			errorMissingCode: "Thiếu mã xác thực. Vui lòng thử lại.",
 		},
 		footer: {
 			copyright: "Bản quyền thuộc về Sun* © 2025",
@@ -189,6 +197,10 @@ export const translations: Record<LanguageCode, Translations> = {
 			button: "LOGIN with Google",
 			buttonAriaLabel: "Login with Google",
 			error: "Login service is temporarily unavailable. Please try again later.",
+			errorUnauthorized: "This email is not allowed. Please use a Sun* email address.",
+			errorSessionExpired: "Your session has expired. Please log in again.",
+			errorAuthFailed: "Login failed. Please try again.",
+			errorMissingCode: "Missing authentication code. Please try again.",
 		},
 		footer: {
 			copyright: "Copyright Sun* © 2025",
