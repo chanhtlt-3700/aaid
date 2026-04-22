@@ -1,0 +1,16 @@
+export const hashtagOptions: string[] = [
+	"Dedicated",
+	"Teamwork",
+	"Kaizen",
+	"Inspiring",
+	"KnowledgeSharing",
+	"Caring",
+	"LeadershipByExample",
+	"GoTheExtraMile",
+	"Creative",
+	"Signature2025",
+	"Clarity",
+	"Reliability",
+	"BehindTheScenes",
+	"DiversityAndInclusion",
+];

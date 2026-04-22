@@ -55,6 +55,26 @@ interface Translations {
 		eventLabel: string;
 		openCta: string;
 	};
+	writeKudoModal: {
+		title: string;
+		close: string;
+		recipientLabel: string;
+		recipientPlaceholder: string;
+		contentPlaceholder: string;
+		contentHint: string;
+		hashtagLabel: string;
+		hashtagAdd: string;
+		maxHashtags: string;
+		imageLabel: string;
+		imageAdd: string;
+		maxImages: string;
+		anonymousToggle: string;
+		anonymousNamePlaceholder: string;
+		cancel: string;
+		submit: string;
+		submittedAlert: string;
+		validationMissing: string;
+	};
 	kudosPage: {
 		bannerTitle: string;
 		bannerSubtitle: string;
@@ -208,6 +228,26 @@ export const translations: Record<LanguageCode, Translations> = {
 				signatureCreator: "Giải thưởng Signature vinh danh cá nhân hoặc tập thể thể hiện tinh thần đặc trưng mà Sun* hướng tới trong từng thời kỳ. Trong năm 2025, giải thưởng Signature vinh danh Creator - cá nhân/tập thể mang tư duy chủ động và nhạy bén, luôn nhìn thấy cơ hội trong thách thức và tiên phong trong hành động.",
 				mvp: "Giải thưởng MVP vinh danh cá nhân xuất sắc nhất năm – gương mặt tiêu biểu đại diện cho toàn bộ tập thể Sun*. Họ là người đã thể hiện năng lực vượt trội, tinh thần cống hiến bền bỉ, và tầm ảnh hưởng sâu rộng, để lại dấu ấn mạnh mẽ trong hành trình của Sun* suốt năm qua.",
 			},
+		},
+		writeKudoModal: {
+			title: "Gửi lời cám ơn và ghi nhận đến đồng đội",
+			close: "Đóng",
+			recipientLabel: "Người nhận",
+			recipientPlaceholder: "Tìm kiếm",
+			contentPlaceholder: "Hãy gửi gắm lời cám ơn và ghi nhận đến đồng đội tại đây nhé!",
+			contentHint: "Bạn có thể \"@ + tên\" để nhắc tới đồng nghiệp khác",
+			hashtagLabel: "Hashtag",
+			hashtagAdd: "+ Hashtag",
+			maxHashtags: "Tối đa 5",
+			imageLabel: "Image",
+			imageAdd: "+ Image",
+			maxImages: "Tối đa 5",
+			anonymousToggle: "Gửi lời cám ơn và ghi nhận ẩn danh",
+			anonymousNamePlaceholder: "Tên hiển thị ẩn danh",
+			cancel: "Hủy",
+			submit: "Gửi",
+			submittedAlert: "Kudo của bạn đã được ghi nhận!",
+			validationMissing: "Vui lòng điền đầy đủ người nhận, nội dung và hashtag.",
 		},
 		countdownPage: {
 			title: "Sắp diễn ra",
@@ -364,6 +404,26 @@ export const translations: Record<LanguageCode, Translations> = {
 				signatureCreator: "The Signature award honors individuals or teams who embody the spirit Sun* prioritizes in each period. In 2025, the Signature — Creator award honors proactive, perceptive people who find opportunity in challenge and take pioneering action.",
 				mvp: "The MVP award honors the most outstanding individual of the year — a defining face of Sun*. They demonstrate superior capability, unwavering dedication, and deep influence, leaving a strong imprint on Sun*'s journey throughout the year.",
 			},
+		},
+		writeKudoModal: {
+			title: "Send kudos to your teammates",
+			close: "Close",
+			recipientLabel: "Recipient",
+			recipientPlaceholder: "Search",
+			contentPlaceholder: "Share your kudos message here!",
+			contentHint: "Use \"@ + name\" to mention a colleague",
+			hashtagLabel: "Hashtag",
+			hashtagAdd: "+ Hashtag",
+			maxHashtags: "Max 5",
+			imageLabel: "Image",
+			imageAdd: "+ Image",
+			maxImages: "Max 5",
+			anonymousToggle: "Send kudos anonymously",
+			anonymousNamePlaceholder: "Anonymous display name",
+			cancel: "Cancel",
+			submit: "Submit",
+			submittedAlert: "Your kudo has been recorded!",
+			validationMissing: "Please fill recipient, content, and hashtag.",
 		},
 		countdownPage: {
 			title: "Coming soon",

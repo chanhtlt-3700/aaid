@@ -2,21 +2,17 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WriteKudoModal } from "@/components/kudos/WriteKudoModal";
 
 export function KudosWriteBar() {
 	const { t } = useLanguage();
-	const [showToast, setShowToast] = useState(false);
-
-	const handleClick = () => {
-		setShowToast(true);
-		window.setTimeout(() => setShowToast(false), 2500);
-	};
+	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="relative">
+		<>
 			<button
 				type="button"
-				onClick={handleClick}
+				onClick={() => setIsOpen(true)}
 				className="flex h-14 w-full items-center gap-3 rounded-full border border-[#2E3940] bg-white/5 px-6 text-left transition-colors hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-[#FFEA9E]"
 			>
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -32,14 +28,7 @@ export function KudosWriteBar() {
 					{t.kudosPage.writePlaceholder}
 				</span>
 			</button>
-			{showToast && (
-				<p
-					role="status"
-					className="absolute left-0 top-full mt-2 rounded bg-[#00070C] px-3 py-2 font-montserrat text-xs text-[#FFEA9E]"
-				>
-					{t.kudosPage.writeComingSoon}
-				</p>
-			)}
-		</div>
+			<WriteKudoModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+		</>
 	);
 }
