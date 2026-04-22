@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { ProfileDropdown } from "@/components/shared/ProfileDropdown";
 
 const navLinks = [
 	{ key: "aboutSAA" as const, href: "/dashboard" },
@@ -47,16 +48,7 @@ export function HeaderNav() {
 				/>
 			</button>
 
-			<button
-				type="button"
-				aria-label="Profile"
-				className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 transition-colors hover:bg-white/30"
-			>
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-					<circle cx="12" cy="8" r="4" fill="white" />
-					<path d="M4 20c0-4 4-7 8-7s8 3 8 7" fill="white" />
-				</svg>
-			</button>
+			<ProfileDropdown />
 		</nav>
 	);
 }

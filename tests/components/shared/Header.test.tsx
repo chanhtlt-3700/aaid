@@ -12,6 +12,18 @@ vi.mock("next/image", () => ({
 
 vi.mock("next/navigation", () => ({
 	usePathname: () => "/dashboard",
+	useRouter: () => ({
+		push: vi.fn(),
+		refresh: vi.fn(),
+	}),
+}));
+
+vi.mock("@/libs/supabase/client", () => ({
+	createClient: () => ({
+		auth: {
+			signOut: vi.fn().mockResolvedValue({ error: null }),
+		},
+	}),
 }));
 
 function renderHeader(variant?: "minimal" | "full") {
@@ -58,8 +70,10 @@ describe("Header", () => {
 		expect(screen.getByRole("button", { name: /thông báo/i })).toBeInTheDocument();
 	});
 
-	it("renders profile button in full variant", () => {
+	it("renders profile dropdown trigger in full variant", () => {
 		renderHeader("full");
-		expect(screen.getByRole("button", { name: /profile/i })).toBeInTheDocument();
+		expect(
+			screen.getByRole("button", { name: /mở menu tài khoản/i }),
+		).toBeInTheDocument();
 	});
 });

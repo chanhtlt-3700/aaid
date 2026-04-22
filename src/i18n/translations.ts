@@ -22,6 +22,13 @@ interface Translations {
 		loggedInAs: string;
 		logout: string;
 	};
+	profileDropdown: {
+		triggerAriaLabel: string;
+		menuAriaLabel: string;
+		profile: string;
+		logout: string;
+		loggingOut: string;
+	};
 	homepage: {
 		nav: {
 			aboutSAA: string;
@@ -118,6 +125,13 @@ export const translations: Record<LanguageCode, Translations> = {
 			loggedInAs: "Đã đăng nhập:",
 			logout: "Đăng xuất",
 		},
+		profileDropdown: {
+			triggerAriaLabel: "Mở menu tài khoản",
+			menuAriaLabel: "Menu tài khoản",
+			profile: "Profile",
+			logout: "Logout",
+			loggingOut: "Đang đăng xuất...",
+		},
 		homepage: {
 			nav: {
 				aboutSAA: "About SAA 2025",
@@ -209,6 +223,13 @@ export const translations: Record<LanguageCode, Translations> = {
 			welcome: "Welcome to SAA 2025",
 			loggedInAs: "Logged in as:",
 			logout: "Logout",
+		},
+		profileDropdown: {
+			triggerAriaLabel: "Open account menu",
+			menuAriaLabel: "Account menu",
+			profile: "Profile",
+			logout: "Logout",
+			loggingOut: "Signing out...",
 		},
 		homepage: {
 			nav: {
