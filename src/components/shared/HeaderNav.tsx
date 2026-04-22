@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ProfileDropdown } from "@/components/shared/ProfileDropdown";
+import { NotificationPanel } from "@/components/shared/NotificationPanel";
 
 const navLinks = [
 	{ key: "aboutSAA" as const, href: "/dashboard" },
@@ -35,18 +35,7 @@ export function HeaderNav() {
 				);
 			})}
 
-			<button
-				type="button"
-				aria-label={t.homepage.nav.notifications}
-				className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10"
-			>
-				<Image
-					src="/assets/homepage/icons/notification-bell.svg"
-					alt=""
-					width={24}
-					height={24}
-				/>
-			</button>
+			<NotificationPanel />
 
 			<ProfileDropdown />
 		</nav>

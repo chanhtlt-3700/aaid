@@ -62,6 +62,29 @@ interface Translations {
 		writeKudo: string;
 		cancel: string;
 	};
+	notificationPanel: {
+		triggerAriaLabel: string;
+		panelTitle: string;
+		markAllRead: string;
+		viewAll: string;
+		empty: string;
+		timeJustNow: string;
+		timeMinutes: string;
+		timeHours: string;
+		timeDays: string;
+		sampleTitles: {
+			kudo: string;
+			heart: string;
+			gift: string;
+			system: string;
+		};
+		sampleMessages: {
+			kudo: string;
+			heart: string;
+			gift: string;
+			system: string;
+		};
+	};
 	kudosRulesModal: {
 		title: string;
 		intro: string;
@@ -252,6 +275,29 @@ export const translations: Record<LanguageCode, Translations> = {
 			rules: "Thể lệ",
 			writeKudo: "Viết KUDOS",
 			cancel: "Hủy",
+		},
+		notificationPanel: {
+			triggerAriaLabel: "Xem thông báo",
+			panelTitle: "Thông báo",
+			markAllRead: "Đánh dấu đã đọc tất cả",
+			viewAll: "Xem tất cả",
+			empty: "Chưa có thông báo mới",
+			timeJustNow: "Vừa xong",
+			timeMinutes: "{n} phút trước",
+			timeHours: "{n} giờ trước",
+			timeDays: "{n} ngày trước",
+			sampleTitles: {
+				kudo: "Bạn vừa nhận một Kudo",
+				heart: "Có người thả tim bài Kudo của bạn",
+				gift: "Bạn vừa nhận một Secret Box",
+				system: "Thông báo hệ thống",
+			},
+			sampleMessages: {
+				kudo: "Trần Văn Khang đã gửi bạn một lời cảm ơn với #Teamwork",
+				heart: "Phạm Thanh Mai và 4 người khác đã thả tim Kudo của bạn",
+				gift: "Mở ngay để biết phần thưởng bên trong!",
+				system: "Lễ trao giải SAA 2025 sẽ diễn ra vào 18:00 ngày 26/12.",
+			},
 		},
 		kudosRulesModal: {
 			title: "Thể lệ Sun* Kudos 2025",
@@ -457,6 +503,29 @@ export const translations: Record<LanguageCode, Translations> = {
 			rules: "Rules",
 			writeKudo: "Write KUDOS",
 			cancel: "Cancel",
+		},
+		notificationPanel: {
+			triggerAriaLabel: "View notifications",
+			panelTitle: "Notifications",
+			markAllRead: "Mark all as read",
+			viewAll: "View all",
+			empty: "No notifications yet",
+			timeJustNow: "Just now",
+			timeMinutes: "{n} minutes ago",
+			timeHours: "{n} hours ago",
+			timeDays: "{n} days ago",
+			sampleTitles: {
+				kudo: "You received a new Kudo",
+				heart: "Someone hearted your Kudo",
+				gift: "You received a Secret Box",
+				system: "System announcement",
+			},
+			sampleMessages: {
+				kudo: "Trần Văn Khang sent you a thank-you with #Teamwork",
+				heart: "Phạm Thanh Mai and 4 others hearted your Kudo",
+				gift: "Open now to see your reward!",
+				system: "The SAA 2025 award ceremony is on Dec 26 at 6 PM.",
+			},
 		},
 		kudosRulesModal: {
 			title: "Sun* Kudos 2025 Rules",
