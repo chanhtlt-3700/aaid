@@ -186,14 +186,12 @@ export function NotificationPanel() {
 					</div>
 
 					<footer className="border-t border-[#2E3940] px-4 py-2 text-center">
-						<button
-							type="button"
-							disabled
-							className="font-montserrat text-xs font-bold text-[#FFEA9E]/60 disabled:cursor-not-allowed"
-							title="Coming soon"
+						<a
+							href="/notifications"
+							className="inline-block font-montserrat text-xs font-bold text-[#FFEA9E] transition-colors hover:text-[#fff8e1]"
 						>
 							{t.notificationPanel.viewAll}
-						</button>
+						</a>
 					</footer>
 				</div>
 			)}

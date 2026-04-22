@@ -18,9 +18,9 @@ export function AwardDetailCard({ award }: Props) {
 	return (
 		<article
 			id={award.slug}
-			className="flex scroll-mt-28 flex-col gap-8 border-b border-[#2E3940] py-12 last:border-b-0 md:flex-row md:gap-12"
+			className="group flex scroll-mt-28 flex-col gap-8 border-b border-[#2E3940] py-12 last:border-b-0 md:flex-row md:gap-12"
 		>
-			<div className="relative h-[280px] w-full shrink-0 md:h-[336px] md:w-[336px]">
+			<div className="relative h-[280px] w-full shrink-0 transition-transform duration-300 group-hover:scale-[1.02] md:h-[336px] md:w-[336px]">
 				<div
 					className="absolute inset-0 rounded-lg"
 					style={{

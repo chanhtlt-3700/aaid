@@ -40,11 +40,12 @@ export function FloatingActionButton() {
 				className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-4 md:bottom-8 md:right-8"
 			>
 				{isExpanded && (
-					<div className="flex flex-col items-end gap-3" style={{ animation: "fadeIn 180ms ease-out" }}>
+					<div className="flex flex-col items-end gap-3">
 						<button
 							type="button"
 							onClick={openRules}
-							className="inline-flex h-14 min-w-[149px] items-center justify-center gap-2 rounded-xl bg-[#FFEA9E] px-5 font-montserrat text-base font-bold text-[#00101A] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#FAE287] transition-colors hover:bg-[#fff8e1]"
+							className="inline-flex h-14 min-w-[149px] animate-fab-pop items-center justify-center gap-2 rounded-xl bg-[#FFEA9E] px-5 font-montserrat text-base font-bold text-[#00101A] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#FAE287] transition-transform hover:scale-105 hover:bg-[#fff8e1]"
+							style={{ animationDelay: "0ms" }}
 						>
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 								<path
@@ -59,7 +60,8 @@ export function FloatingActionButton() {
 						<button
 							type="button"
 							onClick={openWrite}
-							className="inline-flex h-14 min-w-[149px] items-center justify-center gap-2 rounded-xl bg-[#FFEA9E] px-5 font-montserrat text-base font-bold text-[#00101A] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#FAE287] transition-colors hover:bg-[#fff8e1]"
+							className="inline-flex h-14 min-w-[149px] animate-fab-pop items-center justify-center gap-2 rounded-xl bg-[#FFEA9E] px-5 font-montserrat text-base font-bold text-[#00101A] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#FAE287] transition-transform hover:scale-105 hover:bg-[#fff8e1]"
+							style={{ animationDelay: "60ms" }}
 						>
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 								<path
@@ -76,7 +78,8 @@ export function FloatingActionButton() {
 							type="button"
 							onClick={() => setIsExpanded(false)}
 							aria-label={t.fab.cancel}
-							className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#EF4444] text-white shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors hover:bg-[#dc2626]"
+							className="inline-flex h-14 w-14 animate-fab-pop items-center justify-center rounded-full bg-[#EF4444] text-white shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-transform hover:scale-105 hover:bg-[#dc2626]"
+							style={{ animationDelay: "120ms" }}
 						>
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 								<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
@@ -91,7 +94,7 @@ export function FloatingActionButton() {
 						onClick={() => setIsExpanded(true)}
 						aria-label={t.fab.openMenu}
 						aria-expanded={isExpanded}
-						className="flex h-16 w-[106px] items-center justify-center gap-1 rounded-full bg-[#FFEA9E] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#FAE287] transition-transform hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-white"
+						className="flex h-16 w-[106px] animate-pulse-glow items-center justify-center gap-1 rounded-full bg-[#FFEA9E] transition-transform duration-200 hover:scale-110 focus:outline-2 focus:outline-offset-2 focus:outline-white active:scale-95"
 					>
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 							<path

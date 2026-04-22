@@ -55,6 +55,11 @@ interface Translations {
 		eventLabel: string;
 		openCta: string;
 	};
+	comingSoonPage: {
+		title: string;
+		description: string;
+		backToDashboard: string;
+	};
 	fab: {
 		openMenu: string;
 		closeMenu: string;
@@ -347,6 +352,11 @@ export const translations: Record<LanguageCode, Translations> = {
 			eventLabel: "26/12/2025 · Âu Cơ Art Center",
 			openCta: "Vào SAA 2025",
 		},
+		comingSoonPage: {
+			title: "Sắp ra mắt",
+			description: "Trang này đang trong quá trình hoàn thiện và sẽ sớm có mặt. Hãy quay lại sau nhé!",
+			backToDashboard: "Quay về trang chủ",
+		},
 		kudosPage: {
 			bannerTitle: "Hệ thống ghi nhận lời cảm ơn",
 			bannerSubtitle: "SAA 2025 KUDOS",
@@ -574,6 +584,11 @@ export const translations: Record<LanguageCode, Translations> = {
 			subtitle: "SAA 2025 opens in",
 			eventLabel: "Dec 26, 2025 · Au Co Art Center",
 			openCta: "Enter SAA 2025",
+		},
+		comingSoonPage: {
+			title: "Coming soon",
+			description: "This page is under construction and will be available soon. Check back later!",
+			backToDashboard: "Back to dashboard",
 		},
 		kudosPage: {
 			bannerTitle: "Kudos Recognition System",

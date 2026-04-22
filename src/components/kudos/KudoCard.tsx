@@ -49,11 +49,13 @@ export function KudoCard({ kudo, variant = "feed" }: Props) {
 	const [isLiked, setIsLiked] = useState(false);
 	const [heartCount, setHeartCount] = useState(kudo.heartCount);
 	const [copyFeedback, setCopyFeedback] = useState(false);
+	const [heartPulseKey, setHeartPulseKey] = useState(0);
 
 	const toggleHeart = () => {
 		setIsLiked((prev) => {
 			const next = !prev;
 			setHeartCount((c) => c + (next ? 1 : -1));
+			if (next) setHeartPulseKey((k) => k + 1);
 			return next;
 		});
 	};
@@ -73,7 +75,7 @@ export function KudoCard({ kudo, variant = "feed" }: Props) {
 	return (
 		<article
 			id={kudo.id}
-			className={`flex scroll-mt-28 flex-col gap-4 rounded-xl border border-[#2E3940] bg-white/5 p-5 transition-colors ${
+			className={`flex scroll-mt-28 flex-col gap-4 rounded-xl border border-[#2E3940] bg-white/5 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.07] hover:shadow-[0_8px_20px_rgba(0,0,0,0.35)] ${
 				variant === "highlight" ? "ring-1 ring-[#FFEA9E]/30" : ""
 			} ${kudo.isHighlighted && variant === "feed" ? "border-[#FFEA9E]/40" : ""}`}
 		>
@@ -115,11 +117,13 @@ export function KudoCard({ kudo, variant = "feed" }: Props) {
 					className="flex items-center gap-2 rounded px-2 py-1 font-montserrat text-sm font-bold text-white transition-colors hover:bg-white/10"
 				>
 					<svg
+						key={heartPulseKey}
 						width="20"
 						height="20"
 						viewBox="0 0 24 24"
 						fill={isLiked ? "#FF6B6B" : "none"}
 						aria-hidden="true"
+						className={heartPulseKey > 0 && isLiked ? "animate-heart-bounce" : ""}
 					>
 						<path
 							d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z"

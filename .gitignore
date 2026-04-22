@@ -53,3 +53,6 @@ next-env.d.ts
 !.dev.vars.example
 .mcp.json
 mcp.json
+
+# Playwright MCP screenshots (local smoke-test artefacts)
+.playwright-mcp/

@@ -158,7 +158,7 @@ export function WriteKudoModal({ isOpen, onClose }: Props) {
 			onMouseDown={(e) => {
 				if (e.target === backdropRef.current) handleClose();
 			}}
-			className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-0 md:p-6"
+			className="fixed inset-0 z-[100] flex animate-backdrop-fade items-center justify-center bg-black/60 p-0 md:p-6"
 		>
 			<div
 				ref={dialogRef}
@@ -166,7 +166,7 @@ export function WriteKudoModal({ isOpen, onClose }: Props) {
 				aria-modal="true"
 				aria-labelledby={titleId}
 				tabIndex={-1}
-				className="relative flex max-h-screen w-full flex-col overflow-hidden rounded-none border-[#998C5F] bg-[#00070C] shadow-[0_20px_40px_rgba(0,0,0,0.5)] md:max-h-[90vh] md:max-w-[640px] md:rounded-xl md:border"
+				className="relative flex max-h-screen w-full animate-modal-in flex-col overflow-hidden rounded-none border-[#998C5F] bg-[#00070C] shadow-[0_20px_40px_rgba(0,0,0,0.5)] md:max-h-[90vh] md:max-w-[640px] md:rounded-xl md:border"
 			>
 				<header className="flex items-center justify-between border-b border-[#2E3940] px-6 py-4">
 					<h2

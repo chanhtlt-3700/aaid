@@ -45,9 +45,16 @@ export function AwardCard({ award, homepage }: AwardCardProps) {
 					<p className="line-clamp-2 font-montserrat text-sm font-normal leading-6 tracking-[0.5px] text-white md:text-base">
 						{description}
 					</p>
-					<span className="mt-2 inline-flex items-center gap-1 font-montserrat text-sm font-medium leading-6 tracking-[0.15px] text-white md:text-base">
+					<span className="mt-2 inline-flex items-center gap-1 font-montserrat text-sm font-medium leading-6 tracking-[0.15px] text-white transition-colors group-hover:text-[#FFEA9E] md:text-base">
 						{homepage.awards.detailLink}
-						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							aria-hidden="true"
+							className="transition-transform duration-200 group-hover:translate-x-1"
+						>
 							<path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 					</span>

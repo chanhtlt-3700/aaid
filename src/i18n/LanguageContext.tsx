@@ -3,6 +3,8 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { translations, type LanguageCode, type Translations } from "@/i18n/translations";
 
+const COOKIE_NAME = "saa-lang";
+
 interface LanguageContextValue {
 	language: LanguageCode;
 	setLanguage: (code: LanguageCode) => void;
@@ -21,11 +23,23 @@ function setCookie(name: string, value: string) {
 	document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=31536000; SameSite=Lax`;
 }
 
+function getUrlLang(): LanguageCode | null {
+	if (typeof window === "undefined") return null;
+	const value = new URL(window.location.href).searchParams.get("lang")?.toUpperCase();
+	return value === "VN" || value === "EN" ? value : null;
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
 	const [language, setLanguageState] = useState<LanguageCode>("VN");
 
 	useEffect(() => {
-		const saved = getCookie("lang");
+		const urlLang = getUrlLang();
+		if (urlLang) {
+			setLanguageState(urlLang);
+			setCookie(COOKIE_NAME, urlLang);
+			return;
+		}
+		const saved = getCookie(COOKIE_NAME);
 		if (saved === "VN" || saved === "EN") {
 			setLanguageState(saved);
 		}
@@ -33,7 +47,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 	const setLanguage = useCallback((code: LanguageCode) => {
 		setLanguageState(code);
-		setCookie("lang", code);
+		setCookie(COOKIE_NAME, code);
 	}, []);
 
 	const t = translations[language];

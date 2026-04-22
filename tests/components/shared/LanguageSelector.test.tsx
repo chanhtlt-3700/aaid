@@ -122,7 +122,7 @@ describe("LanguageSelector", () => {
 	it("reads language preference from cookie on mount", () => {
 		Object.defineProperty(document, "cookie", {
 			writable: true,
-			value: "lang=EN",
+			value: "saa-lang=EN",
 		});
 
 		renderWithProvider();
