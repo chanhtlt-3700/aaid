@@ -56,3 +56,6 @@ mcp.json
 
 # Playwright MCP screenshots (local smoke-test artefacts)
 .playwright-mcp/
+
+# VSCode settings may contain secrets (momorph.githubToken)
+.vscode/settings.json
