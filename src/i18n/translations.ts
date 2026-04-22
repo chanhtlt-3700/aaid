@@ -29,6 +29,26 @@ interface Translations {
 		logout: string;
 		loggingOut: string;
 	};
+	awardsPage: {
+		bannerTitle: string;
+		caption: string;
+		pageTitle: string;
+		quantityLabel: string;
+		valueLabel: string;
+		unitIndividual: string;
+		unitTeam: string;
+		unitBoth: string;
+		prizeNoteEach: string;
+		prizeNoteIndTeam: string;
+		descriptions: {
+			topTalent: string;
+			topProject: string;
+			topProjectLeader: string;
+			bestManager: string;
+			signatureCreator: string;
+			mvp: string;
+		};
+	};
 	homepage: {
 		nav: {
 			aboutSAA: string;
@@ -132,6 +152,26 @@ export const translations: Record<LanguageCode, Translations> = {
 			logout: "Logout",
 			loggingOut: "Đang đăng xuất...",
 		},
+		awardsPage: {
+			bannerTitle: "ROOT FURTHER - Sun* Annual Award 2025",
+			caption: "Sun* annual awards 2025",
+			pageTitle: "Hệ thống giải thưởng SAA 2025",
+			quantityLabel: "Số lượng giải thưởng:",
+			valueLabel: "Giá trị giải thưởng:",
+			unitIndividual: "Cá nhân",
+			unitTeam: "Tập thể",
+			unitBoth: "Cá nhân hoặc tập thể",
+			prizeNoteEach: "cho mỗi giải thưởng",
+			prizeNoteIndTeam: "cho giải cá nhân / tập thể",
+			descriptions: {
+				topTalent: "Giải thưởng Top Talent vinh danh những cá nhân xuất sắc toàn diện – những người không ngừng khẳng định năng lực chuyên môn vững vàng, hiệu suất công việc vượt trội, luôn mang lại giá trị vượt kỳ vọng, được đánh giá cao bởi khách hàng và đồng đội. Với tinh thần sẵn sàng nhận mọi nhiệm vụ tổ chức giao phó, họ luôn là nguồn cảm hứng, thúc đẩy động lực và tạo ảnh hưởng tích cực đến cả tập thể.",
+				topProject: "Giải thưởng Top Project vinh danh các tập thể dự án xuất sắc với kết quả kinh doanh vượt kỳ vọng, hiệu quả vận hành tối ưu và tinh thần làm việc tận tâm. Đây là các dự án có độ phức tạp kỹ thuật cao, hiệu quả tối ưu hóa nguồn lực và chi phí tốt, đề xuất các ý tưởng có giá trị cho khách hàng, đem lại lợi nhuận vượt trội và nhận được phản hồi tích cực từ khách hàng.",
+				topProjectLeader: "Giải thưởng Top Project Leader vinh danh những nhà quản lý dự án xuất sắc – những người hội tụ năng lực quản lý vững vàng, khả năng truyền cảm hứng mạnh mẽ, và tư duy \"Aim High – Be Agile\" trong mọi bài toán và bối cảnh. Dưới sự dẫn dắt của họ, các thành viên không chỉ cùng nhau vượt qua thử thách và đạt được mục tiêu đề ra, mà còn giữ vững ngọn lửa nhiệt huyết, tinh thần Wasshoi, và trưởng thành để trở thành phiên bản tinh hoa – hạnh phúc hơn của chính mình.",
+				bestManager: "Giải thưởng Best Manager vinh danh những nhà lãnh đạo tiêu biểu – người đã dẫn dắt đội ngũ của mình tạo ra kết quả vượt kỳ vọng, tác động nổi bật đến hiệu quả kinh doanh và sự phát triển bền vững của tổ chức. Dưới sự lãnh đạo của họ, đội ngũ luôn chinh phục và làm chủ mọi mục tiêu bằng năng lực đa nhiệm, khả năng phối hợp hiệu quả, và tư duy ứng dụng công nghệ linh hoạt trong kỷ nguyên số.",
+				signatureCreator: "Giải thưởng Signature vinh danh cá nhân hoặc tập thể thể hiện tinh thần đặc trưng mà Sun* hướng tới trong từng thời kỳ. Trong năm 2025, giải thưởng Signature vinh danh Creator - cá nhân/tập thể mang tư duy chủ động và nhạy bén, luôn nhìn thấy cơ hội trong thách thức và tiên phong trong hành động.",
+				mvp: "Giải thưởng MVP vinh danh cá nhân xuất sắc nhất năm – gương mặt tiêu biểu đại diện cho toàn bộ tập thể Sun*. Họ là người đã thể hiện năng lực vượt trội, tinh thần cống hiến bền bỉ, và tầm ảnh hưởng sâu rộng, để lại dấu ấn mạnh mẽ trong hành trình của Sun* suốt năm qua.",
+			},
+		},
 		homepage: {
 			nav: {
 				aboutSAA: "About SAA 2025",
@@ -230,6 +270,26 @@ export const translations: Record<LanguageCode, Translations> = {
 			profile: "Profile",
 			logout: "Logout",
 			loggingOut: "Signing out...",
+		},
+		awardsPage: {
+			bannerTitle: "ROOT FURTHER - Sun* Annual Award 2025",
+			caption: "Sun* annual awards 2025",
+			pageTitle: "SAA 2025 Award Categories",
+			quantityLabel: "Number of awards:",
+			valueLabel: "Prize value:",
+			unitIndividual: "Individual",
+			unitTeam: "Team",
+			unitBoth: "Individual or team",
+			prizeNoteEach: "per award",
+			prizeNoteIndTeam: "for individual / team",
+			descriptions: {
+				topTalent: "The Top Talent award honors exceptional individuals who excel across every dimension — strong technical expertise, outstanding performance, and consistent delivery of value beyond expectations. They inspire their teammates, take on any mission, and positively influence the whole organization.",
+				topProject: "The Top Project award honors outstanding project teams with business results exceeding expectations, optimal operational efficiency, and dedicated teamwork. These projects feature high technical complexity, strong resource optimization, impactful client proposals, and remarkable client satisfaction.",
+				topProjectLeader: "The Top Project Leader award honors inspiring project managers who combine solid leadership with the ability to motivate, embodying the \"Aim High – Be Agile\" mindset. Under their guidance, teams overcome challenges, hit targets, and grow into more capable — and happier — versions of themselves.",
+				bestManager: "The Best Manager award honors exemplary leaders who guide their teams to results that exceed expectations, generate significant business impact, and contribute to sustainable growth. They empower teams through multi-skill execution, effective collaboration, and flexible application of technology in the digital era.",
+				signatureCreator: "The Signature award honors individuals or teams who embody the spirit Sun* prioritizes in each period. In 2025, the Signature — Creator award honors proactive, perceptive people who find opportunity in challenge and take pioneering action.",
+				mvp: "The MVP award honors the most outstanding individual of the year — a defining face of Sun*. They demonstrate superior capability, unwavering dedication, and deep influence, leaving a strong imprint on Sun*'s journey throughout the year.",
+			},
 		},
 		homepage: {
 			nav: {
