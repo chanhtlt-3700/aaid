@@ -49,6 +49,37 @@ interface Translations {
 			mvp: string;
 		};
 	};
+	kudosPage: {
+		bannerTitle: string;
+		bannerSubtitle: string;
+		writePlaceholder: string;
+		writeComingSoon: string;
+		highlightSubtitle: string;
+		highlightTitle: string;
+		allKudosSubtitle: string;
+		allKudosTitle: string;
+		spotlightSubtitle: string;
+		spotlightTitle: string;
+		spotlightComingSoon: string;
+		emptyFeed: string;
+		copyLink: string;
+		linkCopied: string;
+		viewDetail: string;
+		anonymous: string;
+		sidebar: {
+			title: string;
+			kudosReceived: string;
+			kudosSent: string;
+			heartsReceived: string;
+			heartsGiven: string;
+			secretBoxes: string;
+			secretBoxesOpened: string;
+			openGift: string;
+			recentRankings: string;
+			recentGifts: string;
+			noData: string;
+		};
+	};
 	homepage: {
 		nav: {
 			aboutSAA: string;
@@ -172,6 +203,37 @@ export const translations: Record<LanguageCode, Translations> = {
 				mvp: "Giải thưởng MVP vinh danh cá nhân xuất sắc nhất năm – gương mặt tiêu biểu đại diện cho toàn bộ tập thể Sun*. Họ là người đã thể hiện năng lực vượt trội, tinh thần cống hiến bền bỉ, và tầm ảnh hưởng sâu rộng, để lại dấu ấn mạnh mẽ trong hành trình của Sun* suốt năm qua.",
 			},
 		},
+		kudosPage: {
+			bannerTitle: "Hệ thống ghi nhận lời cảm ơn",
+			bannerSubtitle: "SAA 2025 KUDOS",
+			writePlaceholder: "Hôm nay, bạn muốn gửi lời cảm ơn và ghi nhận đến ai?",
+			writeComingSoon: "Tính năng gửi Kudo sẽ sớm ra mắt!",
+			highlightSubtitle: "Sun* Annual Awards 2025",
+			highlightTitle: "HIGHLIGHT KUDOS",
+			allKudosSubtitle: "Sun* Annual Awards 2025",
+			allKudosTitle: "ALL KUDOS",
+			spotlightSubtitle: "Sun* Annual Awards 2025",
+			spotlightTitle: "SPOTLIGHT BOARD",
+			spotlightComingSoon: "Spotlight board sẽ sớm có mặt.",
+			emptyFeed: "Hiện tại chưa có Kudos nào.",
+			copyLink: "Copy Link",
+			linkCopied: "Link copied — ready to share!",
+			viewDetail: "Xem chi tiết",
+			anonymous: "Ẩn danh",
+			sidebar: {
+				title: "Thống kê của bạn",
+				kudosReceived: "Số Kudos bạn nhận được",
+				kudosSent: "Số Kudos bạn đã gửi",
+				heartsReceived: "Số tim bạn nhận được",
+				heartsGiven: "Số tim bạn đã thả",
+				secretBoxes: "Secret Box chưa mở",
+				secretBoxesOpened: "Secret Box đã mở",
+				openGift: "Mở quà",
+				recentRankings: "10 Sunner có sự thăng hạng mới nhất",
+				recentGifts: "10 Sunner nhận quà mới nhất",
+				noData: "Chưa có dữ liệu",
+			},
+		},
 		homepage: {
 			nav: {
 				aboutSAA: "About SAA 2025",
@@ -289,6 +351,37 @@ export const translations: Record<LanguageCode, Translations> = {
 				bestManager: "The Best Manager award honors exemplary leaders who guide their teams to results that exceed expectations, generate significant business impact, and contribute to sustainable growth. They empower teams through multi-skill execution, effective collaboration, and flexible application of technology in the digital era.",
 				signatureCreator: "The Signature award honors individuals or teams who embody the spirit Sun* prioritizes in each period. In 2025, the Signature — Creator award honors proactive, perceptive people who find opportunity in challenge and take pioneering action.",
 				mvp: "The MVP award honors the most outstanding individual of the year — a defining face of Sun*. They demonstrate superior capability, unwavering dedication, and deep influence, leaving a strong imprint on Sun*'s journey throughout the year.",
+			},
+		},
+		kudosPage: {
+			bannerTitle: "Kudos Recognition System",
+			bannerSubtitle: "SAA 2025 KUDOS",
+			writePlaceholder: "Who would you like to thank today?",
+			writeComingSoon: "Kudo submission is coming soon!",
+			highlightSubtitle: "Sun* Annual Awards 2025",
+			highlightTitle: "HIGHLIGHT KUDOS",
+			allKudosSubtitle: "Sun* Annual Awards 2025",
+			allKudosTitle: "ALL KUDOS",
+			spotlightSubtitle: "Sun* Annual Awards 2025",
+			spotlightTitle: "SPOTLIGHT BOARD",
+			spotlightComingSoon: "Spotlight board is coming soon.",
+			emptyFeed: "No kudos yet.",
+			copyLink: "Copy Link",
+			linkCopied: "Link copied — ready to share!",
+			viewDetail: "View detail",
+			anonymous: "Anonymous",
+			sidebar: {
+				title: "Your stats",
+				kudosReceived: "Kudos received",
+				kudosSent: "Kudos sent",
+				heartsReceived: "Hearts received",
+				heartsGiven: "Hearts given",
+				secretBoxes: "Unopened secret boxes",
+				secretBoxesOpened: "Opened secret boxes",
+				openGift: "Open gift",
+				recentRankings: "10 Sunners with newest promotions",
+				recentGifts: "10 Sunners who just received gifts",
+				noData: "No data yet",
 			},
 		},
 		homepage: {
