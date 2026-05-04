@@ -53,12 +53,30 @@
     "staging": {
       "vars": {
         "NEXTJS_ENV": "staging"
-      }
+      },
+      "images": {
+        "binding": "IMAGES"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "agentic-coding-live-demo-staging"
+        }
+      ]
     },
     "production": {
       "vars": {
         "NEXTJS_ENV": "production"
-      }
+      },
+      "images": {
+        "binding": "IMAGES"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "agentic-coding-live-demo-production"
+        }
+      ]
     }
   }
 }
